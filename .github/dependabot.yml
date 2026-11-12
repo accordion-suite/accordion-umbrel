@@ -1,14 +1,6 @@
 version: 2
 updates:
-  # Group dependency updates into one weekly pull request instead of one each.
-  - package-ecosystem: cargo
-    directory: /
-    schedule:
-      interval: weekly
-    groups:
-      cargo:
-        patterns: ["*"]
-
+  # The app's image is updated by the release script, not Dependabot.
   - package-ecosystem: github-actions
     directory: /
     schedule:

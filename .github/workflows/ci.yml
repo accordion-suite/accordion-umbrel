@@ -9,5 +9,9 @@ permissions:
   contents: read
 
 jobs:
-  rust:
-    uses: accordion-suite/accordion/.github/workflows/rust.yml@main
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: pip install pyyaml==6.0.3
+      - run: python3 scripts/check-store.py
